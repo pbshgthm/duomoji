@@ -18,9 +18,11 @@ cron.start()
 def publish_hello():
     with app.app_context():
         buf=stream.buffer
-        print(buf)
-        sse.publish({"message": buf}, type='greeting')
-        stream.buffer=[]
+        if not len(buf)==0:
+            print(buf)
+            sse.publish({"message": buf}, type='nodelink')
+            sse.publish({})
+            stream.buffer=[]
 
 atexit.register(lambda: cron.shutdown(wait=False))
 
@@ -29,12 +31,17 @@ app.config["REDIS_URL"] = "redis://localhost"
 app.register_blueprint(sse, url_prefix='/stream')
 
 
+
 stream.trackStream()
 
 
 @app.route('/')
 def index():
     return render_template("dee3.html")
+
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0',port='5000',debug=True)
 
 
 

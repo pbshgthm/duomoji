@@ -1,0 +1,43 @@
+body{
+  background-image: url(bg.png);
+}
+
+
+#node-canvas{
+  width:45vw;
+  height:45vw;
+  border: 0px red solid;
+  position: absolute;
+  right: 5vw;
+  top: 12vh;
+}
+
+#main-title{
+  position: absolute;
+  font-size: 5vw;
+  left: 7vw;
+  top: 5vh;
+  color: #455A64;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+#main-desc{
+  position: absolute;
+  font-size: 2vw;
+  left: 7vw;
+  top: 18vh;
+  width: 27vw;
+  text-align: left;
+  color: #90A4AE;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+#rank-canvas{
+  position: absolute;
+  left: 7vw;
+  width: 35vw;
+  height: 65vh;
+  top: 19vw;
+}
