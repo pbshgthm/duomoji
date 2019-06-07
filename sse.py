@@ -10,6 +10,9 @@ import stream
 #run redis with
 #redis-server /usr/local/etc/redis.conf
 
+app = Flask(__name__)
+
+
 
 cron = Scheduler(daemon=True)
 cron.start()
@@ -26,14 +29,10 @@ def publish_hello():
 
 atexit.register(lambda: cron.shutdown(wait=False))
 
-app = Flask(__name__)
+
 app.config["REDIS_URL"] = "redis://localhost"
 app.register_blueprint(sse, url_prefix='/stream')
-
-
-
 stream.trackStream()
-
 
 @app.route('/')
 def index():

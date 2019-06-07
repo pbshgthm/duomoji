@@ -1,5 +1,7 @@
 body{
   background-image: url(bg.png);
+  background-attachment: fixed;
+  height: 190vh;
 }
 
 
@@ -19,7 +21,7 @@ body{
   top: 5vh;
   color: #455A64;
   font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
+  font-weight: Regular;
 }
 
 #main-desc{
@@ -31,7 +33,7 @@ body{
   text-align: left;
   color: #90A4AE;
   font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
+  font-weight: Regular;
 }
 
 #rank-canvas{
@@ -40,4 +42,23 @@ body{
   width: 35vw;
   height: 65vh;
   top: 19vw;
+}
+
+#bub-canvas{
+
+  position: absolute;
+  left: 7vw;
+  width: 75vh;
+  height: 70vh;
+  top: 108vh;
+
+}
+
+#bubsel-canvas{
+  position: absolute;
+  width: 40vw;
+  height: 50vh;
+  right: 2vw;
+  top: 130vh;
+
 }
