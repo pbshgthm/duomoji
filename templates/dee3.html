@@ -40,7 +40,7 @@ setTimeout(function(){
 
       var data = JSON.parse(event.data);
       var combData=data.message
-      console.log(combData)
+      console.log(data.timestamp)
       for(var i=0;i<combData.length;i++){
 
         if(rankOrder.indexOf(combData[i][0])>=0){

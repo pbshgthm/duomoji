@@ -23,7 +23,7 @@ def publish_hello():
         buf=stream.buffer
         if not len(buf)==0:
             print(buf)
-            sse.publish({"message": buf}, type='nodelink')
+            sse.publish({"message": buf,"timestamp":time.time()}, type='nodelink')
             sse.publish({})
             stream.buffer=[]
 

@@ -8,3 +8,14 @@ sudo make install
 make test
 
 redis-server
+
+sudo apt install python3-pip
+
+sudo apt install gunicorn3
+
+
+flask
+gevent
+apscheduler==2.1.2
+flask_sse
+tweepy
