@@ -37,8 +37,10 @@ setTimeout(function(){
 
   var source = new EventSource("{{ url_for('sse.stream') }}");
   source.addEventListener('nodelink', function(event) {
+
       var data = JSON.parse(event.data);
       var combData=data.message
+      console.log(combData)
       for(var i=0;i<combData.length;i++){
 
         if(rankOrder.indexOf(combData[i][0])>=0){
