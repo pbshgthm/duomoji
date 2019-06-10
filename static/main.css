@@ -36,6 +36,25 @@ body{
   font-weight: Regular;
 }
 
+#status{
+  position: absolute;
+  top: 1vh;
+  right: 1vw;
+  color: #90A4AE;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8vw;
+}
+#madeby{
+  position: absolute;
+  top: 198vh;
+  width: 20vw;
+  right: 1vw;
+  left:40vw;
+  color: #90A4AE;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9vw;
+}
 #rank-canvas{
   position: absolute;
   left: 7vw;
