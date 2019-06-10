@@ -104,7 +104,7 @@ buffer=[]
 def pushBuffer(item):
     global buffer, emEncode, archive
     archive[emEncode[item]]+=1
-    buffer.append([emEncode[item],archive[emEncode[item]]])
+    buffer.append((emEncode[item],archive[emEncode[item]]))
     #buffer.extend([emEncode[i] for i in item])
 
 

@@ -1,7 +1,7 @@
 body{
   background-image: url(bg.png);
   background-attachment: fixed;
-  height: 190vh;
+  height: 200vh;
 }
 
 
@@ -50,15 +50,57 @@ body{
   left: 7vw;
   width: 75vh;
   height: 70vh;
-  top: 108vh;
+  top: 118vh;
 
 }
 
 #bubsel-canvas{
   position: absolute;
   width: 40vw;
-  height: 50vh;
+  height: 62vh;
   right: 2vw;
   top: 130vh;
 
+}
+
+#bub-desc{
+  position: absolute;
+  font-size: 2.5vw;
+  left: 59vw;
+  top: 115vh;
+  color: #455A64;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: Regular;
+}
+
+#bub-em{
+  position: absolute;
+  left: 80vw;
+  top: 111vh;
+  width: 7vw;
+  height: 7vw;
+}
+
+#down{
+  position: absolute;
+  bottom: 4vh;
+  width: 3vw;
+  left: 48.5vw;
+  opacity: 0.3;
+  cursor: pointer;
+
+}
+
+#up{
+  position: absolute;
+  top: 105vh;
+  width: 3vw;
+  left: 48.5vw;
+  transform: rotate(180deg);
+  opacity: 0;
+  cursor: pointer;
+}
+
+#up:hover,#down:hover{
+  opacity: 0.5!important;
 }
