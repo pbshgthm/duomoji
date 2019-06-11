@@ -6,9 +6,8 @@ body{
 
 
 #node-canvas{
-  width:45vw;
-  height:45vw;
-  border: 0px red solid;
+  width:80vh;
+  height:80vh;
   position: absolute;
   right: 5vw;
   top: 12vh;
@@ -16,7 +15,7 @@ body{
 
 #main-title{
   position: absolute;
-  font-size: 5vw;
+  font-size: 8vh;
   left: 7vw;
   top: 5vh;
   color: #455A64;
@@ -26,9 +25,9 @@ body{
 
 #main-desc{
   position: absolute;
-  font-size: 2vw;
-  left: 7vw;
-  top: 18vh;
+  font-size: 3vh;
+  left: 7.2vw;
+  top: 15vh;
   width: 27vw;
   text-align: left;
   color: #90A4AE;
@@ -36,14 +35,6 @@ body{
   font-weight: Regular;
 }
 
-#status{
-  position: absolute;
-  top: 1vh;
-  right: 1vw;
-  color: #90A4AE;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.8vw;
-}
 #madeby{
   position: absolute;
   top: 198vh;
@@ -60,7 +51,7 @@ body{
   left: 7vw;
   width: 35vw;
   height: 65vh;
-  top: 19vw;
+  top: 30vh;
 }
 
 #bub-canvas{
@@ -85,7 +76,7 @@ body{
 #bub-desc{
   position: absolute;
   font-size: 2.5vw;
-  left: 59vw;
+  left: 58.5vw;
   top: 115vh;
   color: #455A64;
   font-family: 'Montserrat', sans-serif;
@@ -122,4 +113,9 @@ body{
 
 #up:hover,#down:hover{
   opacity: 0.5!important;
+}
+
+.bubsel-btn:hover + .bubselbg{
+  stroke: #FFE0B2!important;
+  stroke-width:4px;
 }

@@ -12,7 +12,6 @@
   <div id="node-canvas"></div>
   <div id="main-title">DuoMoji</div>
   <div id="main-desc">Track emoji combinations on twitter in realtime</div>
-  <div id="status"><span style="color:#689F38">&#9673;</span> ONLINE</div>
   <div id="rank-canvas"></div>
   <div id="bub-canvas"></div>
   <div id="bubsel-canvas"></div>
@@ -43,16 +42,19 @@ setTimeout(function(){
       console.log(data.timestamp)
       for(var i=0;i<combData.length;i++){
 
-        if(rankOrder.indexOf(combData[i][0])>=0){
-          blinkRank(combData[i][0])
-          updateRank(combData[i])
-        }
+        setTimeout(function(combData,i){
+          if(rankOrder.indexOf(combData[i][0])>=0){
+            blinkRank(combData[i][0])
+            updateRank(combData[i])
+          }
 
 
-        a=nodeList.indexOf(combData[i][0].slice(0,2))
-        b=nodeList.indexOf(combData[i][0].slice(2,4))
-        drawLink(cCenter,cRadius,nodes,a,b,clr="#FFCC80",anim=true);
-        d3.selectAll('circle').each(function(){this.parentNode.appendChild(this)})
+          a=nodeList.indexOf(combData[i][0].slice(0,2))
+          b=nodeList.indexOf(combData[i][0].slice(2,4))
+          drawLink(cCenter,cRadius,nodes,a,b,clr="#FFCC80",anim=true);
+          d3.selectAll('circle').each(function(){this.parentNode.appendChild(this)})
+        },0,combData,i)
+
       }
 
   }, false);

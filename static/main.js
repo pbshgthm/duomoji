@@ -174,7 +174,7 @@ function drawRank(rankList){
       .attr("x", 105)
       .attr("y", (rh/2)+rh*i)
       .attr('font-family','Montserrat')
-      .attr('font-size','22px')
+      .attr('font-size',rh/3+'px')
       .attr('fill','#455A64')
       .attr('id','rval-'+rankList[i][0])
       .text(("000000"+rankList[i][1]).slice(-6));
@@ -212,7 +212,7 @@ function drawRank(rankList){
       .attr("x", 355)
       .attr("y", (rh/2)+rh*i)
       .attr('font-family','Montserrat')
-      .attr('font-size','22px')
+      .attr('font-size',rh/3+'px')
       .attr('fill','#455A64')
       .attr('id','rval-'+rankList[i+8][0])
       .text(("000000"+rankList[i+8][1]).slice(-6));
@@ -358,49 +358,44 @@ var bubselCanvas = d3.select("#bubsel-canvas").append("svg")
     drawPoint(bubemCanvas,[bubemCanWidth/2,bubemCanWidth/2],r=bubemCanWidth/2,_id='bubem-sel',fill='url(#img-'+bubList[0]+')');
 
 
+bgr=bubselCanHeight/16;
+emr=bubselCanHeight/15;
 
 for(var i=0;i<bubList.length;i++){
-  drawPoint(bubselCanvas,[32+65*(i%8),32+70*parseInt(i/8)],r=31,
+  drawPoint(bubselCanvas,[(bgr+1)+(bgr+2)*2*(i%8),(bgr+1)+(2*(bgr+3))*parseInt(i/8)],r=emr,
+  _id='bubsel-'+bubList[i],fill='url(#img-'+bubList[i]+')',_class='bubsel-btn')
+
+  drawPoint(bubselCanvas,[(bgr+1)+(bgr+2)*2*(i%8),(bgr+1)+(2*(bgr+3))*parseInt(i/8)],r=bgr,
   _id='bubselbg-'+bubList[i],fill='None',_class='bubselbg')
 
-  drawPoint(bubselCanvas,[32+65*(i%8),32+70*parseInt(i/8)],r=30,
-  _id='bubsel-'+bubList[i],fill='url(#img-'+bubList[i]+')',_class='bubsel-btn')
 }
 
 
 
-d3.select('#bubselbg-'+bubList[0]).attr('fill','#FFCC80')
+d3.select('#bubselbg-'+bubList[0])
+                .attr('stroke','#FFCC80')
+                .attr('stroke-width','4px');
 
 d3.selectAll(".bubsel-btn")
     .on("click",function(){
        _ind=d3.select(this).attr('id').slice(-2);
-       d3.selectAll(".bubselbg").attr('fill','none');
-       d3.select('#bubselbg-'+_ind).attr('fill','#FFCC80')
+       d3.selectAll(".bubselbg").attr('stroke','none');
+       d3.select('#bubselbg-'+_ind)
+                      .attr('stroke','#FFCC80')
+                      .attr('stroke-width','4px');
        updateData(_ind);
        d3.select('#bubem-sel').attr('fill','url(#img-'+_ind+')')
     });
 
 
-    d3.selectAll(".bubsel-btn")
-        .on("mouseenter", function(){
-            _ind=d3.select(this).attr('id').slice(-2)
-            d3.select('#bubselbg-'+_ind).transition().duration(500).attr('fill','#FFCC80')
-
-        })
-        .on("mouseleave", function(){
-          _ind=d3.select(this).attr('id').slice(-2)
-          if(_ind==selBub)return;
-          d3.select('#bubselbg-'+_ind).transition().duration(500).attr('fill','none')
-        });
-
-
         window.addEventListener("scroll", function (event) {
             var scroll = this.scrollY;
-            if(scroll<200){
+            var height = window.innerHeight;
+            if(scroll<height/4){
               d3.select("#down").transition().duration(100).style("opacity", "0.3");
               d3.select("#up").transition().duration(100).style("opacity", "0");
             }
-            else if (scroll<700){
+            else if (scroll<height*(7/8)){
               d3.select("#down").transition().duration(100).style("opacity","0");
               d3.select("#up").transition().duration(100).style("opacity", "0");
             }
