@@ -115,7 +115,4 @@ body{
   opacity: 0.5!important;
 }
 
-.bubsel-btn:hover + .bubselbg{
-  stroke: #FFE0B2!important;
-  stroke-width:4px;
-}
+
