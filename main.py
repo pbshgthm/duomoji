@@ -30,7 +30,7 @@ def publish_hello():
 atexit.register(lambda: cron.shutdown(wait=False))
 
 
-app.config["REDIS_URL"] = "redis://h:pb62d2c4f8006a7aaa8d011c6b07d42daab2f5a2a8d333911b5b803b90c9be195@ec2-3-208-45-52.compute-1.amazonaws.com:11079"
+app.config["REDIS_URL"] = "redis://h:p2072a167e36ee78008df105162180a9c43bdf6606336f9be772bd3a52d932184@ec2-3-209-95-16.compute-1.amazonaws.com:14869"
 app.register_blueprint(sse, url_prefix='/stream')
 stream.trackStream()
 
