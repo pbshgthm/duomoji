@@ -22,15 +22,14 @@ def publish_hello():
     with app.app_context():
         buf=stream.buffer
         if not len(buf)==0:
-            #print(buf)
+            print(buf)
             sse.publish({"message": buf,"timestamp":time.time()}, type='nodelink')
-            sse.publish({})
             stream.buffer=[]
 
 atexit.register(lambda: cron.shutdown(wait=False))
 
 
-app.config["REDIS_URL"] = "redis://h:pbaee2eada1d076a0d24311cd172950f802c1a9d0b8fb3d0ab857a76abcdf0419@ec2-3-223-193-164.compute-1.amazonaws.com:8819"
+#app.config["REDIS_URL"] = "redis://h:pbaee2eada1d076a0d24311cd172950f802c1a9d0b8fb3d0ab857a76abcdf0419@ec2-3-223-193-164.compute-1.amazonaws.com:8819"
 app.register_blueprint(sse, url_prefix='/stream')
 stream.trackStream()
 

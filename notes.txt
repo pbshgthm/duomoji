@@ -1,3 +1,13 @@
+
+TODO
+
+* change d3 from SVG to canvas
++ make it a little more verbose
+
+
+
+------------
+
 sudo apt-get update && sudo apt-get upgrade
 sudo apt install make gcc libc6-dev tcl
 
